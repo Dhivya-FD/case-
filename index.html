@@ -1,52 +1,56 @@
-<!--  ----------------------------------------------------------------------  -->
-<!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
-<!--  If necessary, please modify the charset parameter to specify the        -->
-<!--  character set of your HTML page.                                        -->
-<!--  ----------------------------------------------------------------------  -->
-
 <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
 <script src="https://www.google.com/recaptcha/api.js"></script>
 <script>
- function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);elems["ts"] = JSON.stringify(new Date().getTime());document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500); 
+ function timestamp() { 
+   var response = document.getElementById("g-recaptcha-response"); 
+   if (response == null || response.value.trim() == "") {
+     var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);
+     elems["ts"] = JSON.stringify(new Date().getTime());
+     document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); 
+   } 
+ }
+ setInterval(timestamp, 500); 
 </script>
-
-<!--  ----------------------------------------------------------------------  -->
-<!--  NOTE: Please add the following <FORM> element to your page.             -->
-<!--  ----------------------------------------------------------------------  -->
 
 <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DNS00000LyQjd" method="POST">
 
-<input type=hidden name='captcha_settings' value='{"keyname":"WebToCaseReCAPTCHA","fallback":"true","orgId":"00DNS00000LyQjd","ts":""}'>
-<input type=hidden name="orgid" value="00DNS00000LyQjd">
-<input type=hidden name="retURL" value="http://127.0.0.1:5500/thank%20you.html">
+  <input type="hidden" name="captcha_settings" value='{"keyname":"WebToCaseReCAPTCHA","fallback":"true","orgId":"00DNS00000LyQjd","ts":""}'>
+  <input type="hidden" name="orgid" value="00DNS00000LyQjd">
+  <input type="hidden" name="retURL" value="http://127.0.0.1:5500/thank%20you.html">
 
-<!--  ----------------------------------------------------------------------  -->
-<!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
-<!--  these lines if you wish to test in debug mode.                          -->
-<!--  <input type="hidden" name="debug" value=1>                             
-  <input type="hidden" name="debugEmail" value="dhivyakalai22@gmail.com">                                        --> -->
-<!--  ----------------------------------------------------------------------  -->
+  <!-- ✅ DEBUG MODE ENABLED HERE -->
+  <input type="hidden" name="debug" value="1">                             
+  <input type="hidden" name="debugEmail" value="dhivyakalai22@gmail.com">                                        
 
-<label for="name">Contact Name</label><input  id="name" maxlength="80" name="name" size="20" type="text" /><br>
+  <label for="name">Contact Name</label>
+  <input id="name" maxlength="80" name="name" size="20" type="text"><br>
 
-<label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>
+  <label for="email">Email</label>
+  <input id="email" maxlength="80" name="email" size="20" type="email"><br>
 
-<label for="phone">Phone</label><input  id="phone" maxlength="40" name="phone" size="20" type="text" /><br>
+  <label for="phone">Phone</label>
+  <input id="phone" maxlength="40" name="phone" size="20" type="text"><br>
 
-<label for="subject">Subject</label><input  id="subject" maxlength="80" name="subject" size="20" type="text" /><br>
+  <label for="subject">Subject</label>
+  <input id="subject" maxlength="80" name="subject" size="20" type="text"><br>
 
-<label for="description">Description</label><textarea name="description"></textarea><br>
+  <label for="description">Description</label>
+  <textarea name="description"></textarea><br>
 
-Location:<select  id="00NNS00002EGu8P" name="00NNS00002EGu8P" title="Location"><option value="">--None--</option><option value="Chennai">Chennai</option>
-<option value="Bangalore">Bangalore</option>
-<option value="Others">Others</option>
-</select><br>
+  Location:
+  <select id="00NNS00002EGu8P" name="00NNS00002EGu8P" title="Location">
+    <option value="">--None--</option>
+    <option value="Chennai">Chennai</option>
+    <option value="Bangalore">Bangalore</option>
+    <option value="Others">Others</option>
+  </select><br>
 
-Due Date:<span class="dateInput dateOnlyInput"><input  id="00NNS00002F57dV" name="00NNS00002F57dV" size="12" type="text" /></span><br>
+  Due Date:
+  <span class="dateInput dateOnlyInput">
+    <input id="00NNS00002F57dV" name="00NNS00002F57dV" size="12" type="text">
+  </span><br>
 
-<div class="g-recaptcha" data-sitekey="6Ldt85krAAAAALKqXROQ4roXRL495k5WWbOJAkih"></div><br>
-<input type="submit" name="submit">
+  <div class="g-recaptcha" data-sitekey="6Ldt85krAAAAALKqXROQ4roXRL495k5WWbOJAkih"></div><br>
 
+  <input type="submit" name="submit">
 </form>
-
-
